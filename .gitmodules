@@ -1,0 +1,3 @@
+[submodule "modules/Fusepp"]
+	path = modules/Fusepp
+	url = https://github.com/jachappell/Fusepp.git
