@@ -17,6 +17,7 @@ public:
 
     std::set<int> work_units;
 
+    void makeWork();
 private:
     int units_num_;
 };
