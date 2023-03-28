@@ -1,6 +1,9 @@
 #include "Unit.h"
+#include "utils/popen2.h"
 #include <cstdio>
 #include <iostream>
+#include <ostream>
+#include <unistd.h>
 
 
 void Unit::makeWork() {
@@ -19,12 +22,12 @@ void Unit::makeWork() {
         std::unique_ptr<FILE, decltype(&pclose)> gccIO(popen("/tmp/mycpu_tmp_bin", "r"), pclose);
         assert(gccIO != nullptr);
 
-        // Write input text to compiler
-        int res = fwrite(lram->text.c_str(), sizeof(char), lram->text.length(), gccIO.get());
-        assert(res == lram->text.length());
+        // Write input text to compiler (input not working yet)
+        // int res = fwrite(lram->text.c_str(), sizeof(char), lram->text.length(), gccIO.get());
+        // assert(res == lram->text.length());
 
         // Read output from compiler
-        res = fread(&output[0], sizeof(char), (size_t) string_length, gccIO.get());
+        int res = fread(&output[0], sizeof(char), (size_t) string_length, gccIO.get());
     }
 
     lram->text = output;

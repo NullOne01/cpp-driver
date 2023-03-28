@@ -11,7 +11,7 @@ find_package(FUSE REQUIRED)
 include_directories(${FUSE_INCLUDE_DIR})
 
 include_directories("src")
-add_library(cpp_driver_lib  src/model/Unit.cpp src/model/Unit.h src/model/MyCPU.cpp src/model/MyCPU.h src/model/ram/Ram.cpp src/model/ram/Ram.h src/model/ram/LRam.cpp src/model/ram/LRam.h src/model/ram/PRam.cpp src/model/ram/PRam.h)
+add_library(cpp_driver_lib  src/model/Unit.cpp src/model/Unit.h src/model/MyCPU.cpp src/model/MyCPU.h src/model/ram/Ram.cpp src/model/ram/Ram.h src/model/ram/LRam.cpp src/model/ram/LRam.h src/model/ram/PRam.cpp src/model/ram/PRam.h src/utils/popen2.cpp src/utils/popen2.h)
 
 add_executable(cpp_driver src/main.cpp)
 target_link_libraries(cpp_driver cpp_driver_lib ${FUSE_LIBRARIES})
