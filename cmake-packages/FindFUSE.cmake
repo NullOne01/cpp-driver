@@ -36,6 +36,3 @@ find_package_handle_standard_args ("FUSE" DEFAULT_MSG
 mark_as_advanced (FUSE_INCLUDE_DIR FUSE_LIBRARIES)
 
 add_compile_definitions(_FILE_OFFSET_BITS=64)
-
-set(CPP_MODULE "${CMAKE_CURRENT_SOURCE_DIR}/modules/Fusepp")
-include_directories(${CPP_MODULE})
